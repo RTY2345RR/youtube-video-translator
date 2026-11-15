@@ -1,0 +1,42 @@
+# youtube-video-translator
+
+> Open-source YouTube video translator and AI video dubbing CLI (MIT, Python 3.10+). One command takes a YouTube URL or a local video, gets the transcript (YouTube captions, else speech recognition), translates it (a user-supplied SRT/VTT/TXT/JSON file or any OpenAI-compatible LLM), and writes a dubbed MP4, an MP3/M4A dub track and translated SRT subtitles with each speaker in their own cloned voice. No GPU or local models; voices are cloned and rendered by the Miragea voice engine (https://miragea.ai).
+
+## Install and run
+
+- `uvx --from git+https://github.com/RTY2345RR/youtube-video-translator youtube-video-translator "https://youtu.be/VIDEO_ID" --to es`
+- `pipx install git+https://github.com/RTY2345RR/youtube-video-translator`
+- Voice engine key: `export MIRAGEA_API_KEY=...` from https://miragea.ai/workspace/api ; agents: Install https://miragea.ai/skills/miragea-audio/install.md
+- Translator: `--translation FILE`, or `OPENAI_API_KEY`, or `TRANSLATOR_LLM_BASE_URL` + `TRANSLATOR_LLM_API_KEY` + `TRANSLATOR_LLM_MODEL` (OpenRouter, DeepSeek, Groq, Ollama, LM Studio...)
+
+## Common tasks
+
+- Translate a YouTube video to English: `youtube-video-translator URL --to en`
+- Translate a YouTube video to Spanish audio: `youtube-video-translator URL --to es`
+- Several languages: `--to es,de,pt-BR,ja`
+- Subtitles only (no voices): `--subtitles-only`
+- Video without captions: speech recognition is automatic; `--no-youtube-captions` forces it
+- Own translation: `--translation my.es.srt` (a different cue cut re-times the dub)
+- Override a voice: `--voice "Speaker 1=https://clip.wav|exact words"` or `--voice "Anna=actor:ID"`
+- Resume after a stop: run the same command again (no duplicate jobs on retry)
+
+## Outputs (per language, in ./translated/<video>/)
+
+- `<video>.<lang>.mp4` dubbed video with soft subtitles
+- `<video>.<lang>.mp3` dub track, same length as the video
+- `<video>.<lang>.srt` and `.speakers.srt` translated subtitles
+- `<video>.source.srt` source transcript
+- `youtube-upload/` folder for YouTube Studio multi-language audio (YouTube sources)
+
+## Docs
+
+- README: https://github.com/RTY2345RR/youtube-video-translator#readme
+- Example with real audio: https://github.com/RTY2345RR/youtube-video-translator/tree/main/examples/spanish-to-english-two-speakers
+- Comparison with pyvideotrans, VideoLingo, Auto-Synced-Translated-Dubs: https://github.com/RTY2345RR/youtube-video-translator#comparison
+- FAQ: https://github.com/RTY2345RR/youtube-video-translator#faq
+
+## Related
+
+- https://github.com/RTY2345RR/youtube-dubbing-mcp : YouTube dubbing MCP server (same engine, agent-driven)
+- https://github.com/RTY2345RR/miragea-voice-mcp : TTS / voiceover MCP server (PyPI tts-mcp-server)
+- https://github.com/RTY2345RR/miragea-agent-skills : Agent Skills for voiceover and dubbing
