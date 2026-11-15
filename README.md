@@ -13,7 +13,7 @@ uvx --from git+https://github.com/RTY2345RR/youtube-video-translator youtube-vid
 
 ![YouTube video translator demo: a Spanish two-speaker interview translated and dubbed into English with each speaker's cloned voice, waveforms of the original and dubbed audio, and synced English SRT subtitles](docs/images/youtube-video-translator-ai-video-dubbing-demo.png)
 
-**Hear the real output** (no edits): [English dub, MP3](examples/spanish-to-english-two-speakers/interview-es.en.mp3) · [dubbed video, MP4](examples/spanish-to-english-two-speakers/interview-es.en.mp4) · [English SRT](examples/spanish-to-english-two-speakers/interview-es.en.srt) · [original Spanish clip](examples/spanish-to-english-two-speakers/interview-es.mp4). One male and one female speaker, each keeps a distinct voice. Details in [the example](examples/spanish-to-english-two-speakers/).
+**Hear the real output** (no edits): [English dub, MP3](examples/spanish-to-english-two-speakers/interview-es.en.mp3) · [dubbed video, MP4](examples/spanish-to-english-two-speakers/interview-es.en.mp4) · [English SRT](examples/spanish-to-english-two-speakers/interview-es.en.srt) · [original Spanish clip](examples/spanish-to-english-two-speakers/interview-es.mp4). One male and one female speaker, each keeps a distinct voice. Details in [the example](examples/spanish-to-english-two-speakers/). Play it in the browser on the [Hugging Face demo page](https://huggingface.co/spaces/miragea/youtube-video-translator).
 
 ## Contents
 

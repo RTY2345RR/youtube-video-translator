@@ -38,6 +38,7 @@ dev = ["pytest>=8", "anyio>=4", "build", "twine"]
 
 [project.urls]
 Homepage = "https://github.com/RTY2345RR/youtube-video-translator"
+Demo = "https://huggingface.co/spaces/miragea/youtube-video-translator"
 Repository = "https://github.com/RTY2345RR/youtube-video-translator"
 Documentation = "https://github.com/RTY2345RR/youtube-video-translator#readme"
 Issues = "https://github.com/RTY2345RR/youtube-video-translator/issues"
